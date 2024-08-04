@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useFoodDataMutate } from '../../hooks/useFoodDataMutate';
-import { FoodData } from '../../interface/FoodData';
-
+import { useFoodDataMutate } from '/Users/gabrielsoares/Downloads/Siri Cascudo/menu2/src/hooks/useFoodDataMutate.ts';
+import { FoodData } from '/Users/gabrielsoares/Downloads/Siri Cascudo/menu2/src/interface/FoodData.ts'
 import "./modal.css";
 
 interface InputProps {
@@ -43,9 +42,11 @@ export function CreateModal({ closeModal }: ModalProps){
         closeModal();
     }, [isSuccess])
 
+
     return(
         <div className="modal-overlay">
             <div className="modal-body">
+                <button onClick={closeModal} className="close-button">X</button>
                 <h2>Cadastre um novo item no cardápio</h2>
                 <form className="input-container">
                     <Input label="title" value={title} updateValue={setTitle}/>
