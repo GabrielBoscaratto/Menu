@@ -1,44 +1,55 @@
-.container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 100vw
-}
-  
-.card-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-}
-  
-.container button {
-    background-color: #0275d8;
-    color: white;
-    font-weight: bold;
-    position: fixed;
-    bottom: 16px;
-    right: 24px;
-    transition: all 0.1s linear 0.1s;
-}
-  
-.container button:hover {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 7px 0px;
-    transform: scale(1.1);
-}
+/* Variables */
+$small-spacing: 8px;
+$medium-spacing: 16px;
+$large-spacing: 24px;
+
+/* Global styles */
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
 }
 
+/* Container */
 .container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: $medium-spacing;
 }
 
+/* Card grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: $small-spacing;
+}
+
+/* Button */
+button {
+  background-color: #0275d8;
+  color: white;
+  font-weight: bold;
+  padding: $small-spacing $medium-spacing;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.1s linear 0.1s;
+}
+
+button:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 7px 0px;
+  transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}

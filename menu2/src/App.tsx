@@ -22,6 +22,8 @@ function App() {
   const { data } = useFoodData();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [shadowX, setShadowX] = useState(0);
+  const [shadowY, setShadowY] = useState(0);
 
   const handleOpenModal = () => {
     setIsModalOpen(prev => !prev)
@@ -43,6 +45,14 @@ function App() {
     setIsPlaying(!isPlaying);
   }
 
+  const handleMouseMove = (event) => {
+    const rect = event.target.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    setShadowX(x);
+    setShadowY(y);
+  };
+
   return (
     <div className="container" style={{
       backgroundImage: `url(${backgroundImage})`,
@@ -59,6 +69,11 @@ function App() {
             price={foodData.price}
             title={foodData.title}
             image={foodData.image}
+            onMouseMove={handleMouseMove}
+            style={{
+              '--shadow-x': `${shadowX}px`,
+              '--shadow-y': `${shadowY}px`,
+            }}
           />
         )}
       </div>
