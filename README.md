@@ -22,8 +22,3 @@ Este projeto é uma aplicação de um menu de restaurante, desenvolvida utilizan
 - **CRUD**: Adição, remoção e atualização de itens do menu via API (opcional, dependendo de como você configurou).
 
 ## Como Executar o Projeto
-
-### Pré-requisitos
-
-- JDK 17 ou superior instalado.
-- Node.js e npm instalados.
